@@ -18,6 +18,7 @@ public class Colegio implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
@@ -46,6 +47,11 @@ public class Colegio implements Serializable {
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+	
+	@Override
+	public String toString() {
+		return "Colegio [id=" + id + ", nombre=" + nombre + ", idcurso=" + idcurso + "]";
 	}
 	
 	

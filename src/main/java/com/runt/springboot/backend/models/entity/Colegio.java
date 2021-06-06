@@ -2,6 +2,7 @@ package com.runt.springboot.backend.models.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,6 +24,7 @@ public class Colegio implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
 	private  String nombre;
+	@Column(name="id_curso")
 	private long idcurso;
 	
 	public String getNombre() {

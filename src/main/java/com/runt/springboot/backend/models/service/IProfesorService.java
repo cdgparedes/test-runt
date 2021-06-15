@@ -6,5 +6,6 @@ import com.runt.springboot.backend.profesor.models.entity.Profesor;
 
 public interface IProfesorService {
 	public List<Profesor> findAll();
+	public Profesor findById(Long id); 
 
 }

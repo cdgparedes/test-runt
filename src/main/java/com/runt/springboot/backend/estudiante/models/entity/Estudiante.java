@@ -1,13 +1,19 @@
 package com.runt.springboot.backend.estudiante.models.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+
+import com.runt.springboot.backend.asignatura.models.entity.Asignatura;
 
 @Entity
 @Table(name="estudiantes")
@@ -24,6 +30,9 @@ public class Estudiante implements Serializable{
 	private String nombre;
 	@Column(name="id_asignatura")
 	private long idAsignatura;
+	
+	@ManyToMany(mappedBy = "estudiante")
+	List<Asignatura> asignatura;
 	public long getId() {
 		return id;
 	}

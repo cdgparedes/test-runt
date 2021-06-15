@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+
 import com.runt.springboot.backend.models.dao.IProfesorDao;
 import com.runt.springboot.backend.profesor.models.entity.Profesor;
 
@@ -20,6 +21,12 @@ public class ProfesorServiceImpl implements IProfesorService {
 	@Transactional(readOnly = true)
 	public List<Profesor> findAll() {
 		return (List<Profesor>) profesorDao.findAll();
+	}
+	
+	@Override
+	@Transactional
+	public Profesor findById(Long id) {
+		return profesorDao.findById(id).orElse(null);
 	}
 
 }
